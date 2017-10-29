@@ -7,6 +7,9 @@ cd /home/container
 MODIFIED_STARTUP=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
 echo ":/home/container$ ${MODIFIED_STARTUP}"
 
+# Always run yarn at startup, this will make sure node_modules are up to date
+yarn
+
 # Run the Server
 ${MODIFIED_STARTUP}
 
