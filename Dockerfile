@@ -8,7 +8,9 @@ FROM        node:8.6.0-alpine
 MAINTAINER  Dizzy, <itsdizzy40@gmail.com>
 
 RUN         apk update \
+            && apk add python python-dev py-pip build-base \
             && apk upgrade \
+            && rm -rf /var/cache/apk/* \
             && adduser -D -h /home/container container
 
 USER        container
