@@ -11,6 +11,7 @@ RUN         apk update \
             && apk add python python-dev py-pip build-base curl ffmpeg\
             && apk upgrade \
             && rm -rf /var/cache/apk/* \
+            && pip install --upgrade youtube-dl \
             && adduser -D -h /home/container container
 
 USER        container
